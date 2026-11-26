@@ -4,71 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop Amigo Fiel - Ajuda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+    <div class="top-info-bar py-2">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <div>
+                <span id="relogio-loja" aria-live="polite">Carregando horário...</span>
+                <span id="status-loja" class="badge bg-secondary ms-2">Verificando...</span>
+            </div>
+            <div class="d-flex align-items-center gap-1" role="region" aria-label="Controles de acessibilidade">
+                <span class="me-1">Acessibilidade:</span>
+                <button type="button" id="btn-contraste" class="btn btn-sm btn-outline-light">Alto Contraste</button>
+                <button type="button" id="btn-fonte-menor" class="btn btn-sm btn-outline-light" aria-label="Diminuir fonte">A-</button>
+                <button type="button" id="btn-fonte-padrao" class="btn btn-sm btn-outline-light" aria-label="Tamanho padrão da fonte">A</button>
+                <button type="button" id="btn-fonte-maior" class="btn btn-sm btn-outline-light" aria-label="Aumentar fonte">A+</button>
+            </div>
+        </div>
+    </div>
+
     <header>
-        <h1>PetShop Amigo Fiel</h1>
-        <p><strong>Cuidado, carinho e qualidade para o seu melhor amigo!</strong></p>
-        <p>Endereço: Av. Ipiranga, 6681 - Porto Alegre, RS | Telefone: (51) 3333-4444 | Horário: Seg a Sáb, das 08h às 19h</p>
-        <nav aria-label="Menu principal">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="produtos.html">Produtos</a></li>
-                <li><a href="servicos.html">Serviços (Banho e Tosa)</a></li>
-                <li><a href="ajuda.html">Ajuda</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-petshop shadow-sm" aria-label="Menu principal">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">PetShop Amigo Fiel</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Alternar menu de navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servicos.html">Serviços</a></li>
+                        <li class="nav-item"><a class="nav-link" href="agendamento.html">Agendamento</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="ajuda.html">Ajuda</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <hr>
     </header>
 
-    <main>
-        <h2>Guia de Ajuda e Funcionalidades do Sistema Web</h2>
-        <p>
-            Esta página descreve a estrutura e as funcionalidades do sistema web do <strong>PetShop Amigo Fiel</strong>,
-            desenvolvido na Fase 1 da disciplina <em>Fundamentos de Sistemas Web</em> utilizando exclusivamente HTML5 semântico.
+    <main id="conteudo-principal" class="container my-4">
+        <h1 class="h2 fw-bold mb-3">Guia de Ajuda e Funcionalidades (Fase 2)</h1>
+        <p class="lead">
+            Esta página documenta todas as funcionalidades do sistema web do <strong>PetShop Amigo Fiel</strong>,
+            evoluído na Fase 2 com CSS, Bootstrap 5, JavaScript, formulário de agendamento e recursos de acessibilidade.
         </p>
 
-        <hr>
+        <section class="mb-4">
+            <h2 class="h4">1. Páginas do Sistema</h2>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Início (<a href="index.html">index.html</a>):</strong> Apresenta o carrossel de destaques Bootstrap, aviso temporal exibido após 2 segundos, resumo das 3 categorias de produtos e acesso rápido aos serviços.</li>
+                <li class="list-group-item"><strong>Produtos (<a href="produtos.html">produtos.html</a>):</strong> Catálogo estilizado em cards responsivos dividido em <em>Acessórios</em>, <em>Rações Não Perecíveis</em> e <em>Higiene e Limpeza</em>, com âncoras de navegação.</li>
+                <li class="list-group-item"><strong>Serviços (<a href="servicos.html">servicos.html</a>):</strong> Detalha os serviços de <em>Banho</em> e <em>Banho e Tosa</em> (com e sem tele-busca) e exibe tabela comparativa de valores.</li>
+                <li class="list-group-item"><strong>Agendamento (<a href="agendamento.html">agendamento.html</a>):</strong> Formulário completo de cadastro do cliente (nome, CPF, sexo, endereço, telefone, e-mail), dados do pet (nome, raça, idade, porte), seleção de serviços, método (tele-busca ou entrega no local) e calendário para dia e horário.</li>
+                <li class="list-group-item"><strong>Ajuda (<a href="ajuda.html">ajuda.html</a>):</strong> Manual de uso e documentação técnica do projeto.</li>
+            </ul>
+        </section>
 
-        <section>
-            <h3>1. Estrutura Geral das Páginas</h3>
+        <section class="mb-4">
+            <h2 class="h4">2. Recursos Dinâmicos em JavaScript</h2>
             <ul>
-                <li><strong>Cabeçalho (<code>&lt;header&gt;</code>):</strong> Presente no topo de todas as páginas, exibe o nome do estabelecimento, endereço, telefone, horário de funcionamento e o menu de navegação principal (<code>&lt;nav&gt;</code>).</li>
-                <li><strong>Corpo (<code>&lt;main&gt;</code>):</strong> Apresenta o conteúdo específico de cada página, organizado em seções (<code>&lt;section&gt;</code>) e artigos (<code>&lt;article&gt;</code>).</li>
-                <li><strong>Rodapé (<code>&lt;footer&gt;</code>):</strong> Presente ao final de todas as páginas, contém os dados legais e de contato do petshop, links rápidos de navegação e os créditos de autoria.</li>
+                <li><strong>Funções Temporais:</strong> Relógio em tempo real com indicador de funcionamento (<em>Aberto agora / Fechado no momento</em>) atualizado a cada segundo via <code>setInterval</code>, além de aviso promocional exibido via <code>setTimeout</code>.</li>
+                <li><strong>Interatividade no Formulário:</strong> Máscaras automáticas para CPF e telefone, bloqueio de datas passadas no calendário, cálculo dinâmico do valor estimado e exibição do comprovante de agendamento na tela.</li>
             </ul>
         </section>
 
         <section>
-            <h3>2. Descrição das Páginas e Funcionalidades</h3>
+            <h2 class="h4">3. Recursos de Acessibilidade</h2>
             <ul>
-                <li><strong>Início (<a href="index.html">index.html</a>):</strong> Apresenta uma visão geral do petshop, um resumo das três categorias de produtos e um destaque para os serviços de banho e tosa.</li>
-                <li><strong>Produtos (<a href="produtos.html">produtos.html</a>):</strong> Exibe o catálogo completo dividido em três categorias (<em>Acessórios</em>, <em>Rações Não Perecíveis</em> e <em>Higiene e Limpeza</em>), com links internos (âncoras) para acesso rápido, contendo foto, descrição detalhada e valor de pelo menos dois produtos por categoria.</li>
-                <li><strong>Serviços (<a href="servicos.html">servicos.html</a>):</strong> Apresenta os serviços de <em>Banho</em> e <em>Banho e Tosa</em>, especificando claramente a disponibilidade com ou sem tele-busca, além de uma tabela comparativa de valores por porte do animal.</li>
-                <li><strong>Ajuda (<a href="ajuda.html">ajuda.html</a>):</strong> Documenta as funcionalidades do site e orienta o usuário sobre a navegação entre as páginas.</li>
+                <li><strong>Audiodescrição de imagens:</strong> Todas as imagens possuem o atributo <code>alt</code> detalhado para leitores de tela.</li>
+                <li><strong>Navegação assistida:</strong> Link <em>"Pular para o conteúdo principal"</em> via teclado, rótulos <code>&lt;label&gt;</code> associados aos campos e atributos <code>aria-label</code> / <code>aria-live</code>.</li>
+                <li><strong>Controles visuais:</strong> Barra superior com botão de <strong>Alto Contraste</strong> e ajuste de tamanho de fonte (<strong>A-</strong>, <strong>A</strong>, <strong>A+</strong>).</li>
             </ul>
-        </section>
-
-        <section>
-            <h3>3. Observações Técnicas (Fase 1)</h3>
-            <p>
-                Conforme os requisitos da Fase 1 do projeto, todas as páginas foram construídas apenas com HTML5 estrutural e semântico,
-                sem aplicação de folhas de estilo (CSS / Bootstrap) e sem scripts (JavaScript), que serão incorporados na Fase 2.
-            </p>
         </section>
     </main>
 
-    <footer>
-        <hr>
-        <p><strong>PetShop Amigo Fiel</strong> - CNPJ: 00.000.000/0001-00</p>
-        <p>Contato: contato@petshopamigofiel.com.br | WhatsApp: (51) 99999-0000 | Av. Ipiranga, 6681 - Porto Alegre/RS</p>
-        <nav aria-label="Menu do rodapé">
-            <a href="index.html">Início</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Serviços</a> |
-            <a href="ajuda.html">Ajuda</a>
-        </nav>
-        <p>&copy; 2026 PetShop Amigo Fiel. Desenvolvido por Zédles dos Reis Santos - Projeto da Disciplina Fundamentos de Sistemas Web (Fase 1).</p>
+    <footer class="footer-petshop py-4 mt-5">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <p class="mb-1 fw-bold">PetShop Amigo Fiel — CNPJ: 00.000.000/0001-00</p>
+                    <p class="mb-1 small">Av. Ipiranga, 6681 - Porto Alegre/RS | Horário: Seg a Sáb, das 08h às 19h</p>
+                    <p class="mb-0 small">Contato: contato@petshopamigofiel.com.br | WhatsApp: (51) 99999-0000</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <nav aria-label="Menu do rodapé" class="mb-2">
+                        <a href="index.html" class="me-3">Início</a>
+                        <a href="produtos.html" class="me-3">Produtos</a>
+                        <a href="servicos.html" class="me-3">Serviços</a>
+                        <a href="agendamento.html" class="me-3">Agendamento</a>
+                        <a href="ajuda.html">Ajuda</a>
+                    </nav>
+                    <p class="mb-0 small">&copy; 2026 PetShop Amigo Fiel. Desenvolvido por Zédles dos Reis Santos — Fundamentos de Sistemas Web (Fase 2).</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
