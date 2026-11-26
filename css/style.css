@@ -1,0 +1,180 @@
+/* ==========================================================================
+   PetShop Amigo Fiel - Folha de Estilos Customizada (Fase 2)
+   Disciplina: Fundamentos de Sistemas Web (PUCRS)
+   ========================================================================== */
+
+:root {
+    --cor-primaria: #1b4d3e;
+    --cor-secundaria: #2e7d64;
+    --cor-destaque: #f59e0b;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #1e293b;
+    --escala-fonte: 100%;
+}
+
+html {
+    font-size: var(--escala-fonte);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Link de acessibilidade para pular direto ao conteúdo principal */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 16px;
+    z-index: 2000;
+    border-radius: 0 0 6px 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--cor-destaque);
+}
+
+/* Barra superior de informações e acessibilidade */
+.top-info-bar {
+    background-color: #0f2f26;
+    color: #e2e8f0;
+    font-size: 0.875rem;
+}
+
+/* Cabeçalho / Navbar */
+.navbar-petshop {
+    background-color: var(--cor-primaria);
+}
+
+.navbar-petshop .nav-link {
+    color: #e2e8f0;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar-petshop .nav-link:hover,
+.navbar-petshop .nav-link.active {
+    color: #fde68a;
+}
+
+/* Carrossel da página inicial */
+.carousel-petshop .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    background-color: #ffffff;
+}
+
+.carousel-caption-bg {
+    background: rgba(15, 47, 38, 0.82);
+    border-radius: 10px;
+    padding: 14px 20px;
+}
+
+/* Cards de produtos e serviços */
+.card-produto {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff;
+}
+
+.card-produto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(15, 47, 38, 0.12);
+}
+
+.card-produto img {
+    height: 220px;
+    object-fit: contain;
+    padding: 12px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.preco-destaque {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+}
+
+/* Rodapé */
+.footer-petshop {
+    background-color: #0f2f26;
+    color: #e2e8f0;
+}
+
+.footer-petshop a {
+    color: #fde68a;
+    text-decoration: none;
+}
+
+.footer-petshop a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Modo de Acessibilidade: Alto Contraste
+   ========================================================================== */
+body.high-contrast {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+}
+
+body.high-contrast .navbar-petshop,
+body.high-contrast .top-info-bar,
+body.high-contrast .footer-petshop,
+body.high-contrast .card,
+body.high-contrast .card-produto,
+body.high-contrast .bg-white,
+body.high-contrast .bg-light,
+body.high-contrast .alert,
+body.high-contrast .table {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border-color: #ffff00 !important;
+}
+
+body.high-contrast a,
+body.high-contrast .nav-link,
+body.high-contrast .preco-destaque,
+body.high-contrast h1,
+body.high-contrast h2,
+body.high-contrast h3,
+body.high-contrast h4,
+body.high-contrast p,
+body.high-contrast label,
+body.high-contrast td,
+body.high-contrast th {
+    color: #ffff00 !important;
+}
+
+body.high-contrast .btn-primary,
+body.high-contrast .btn-success {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-color: #ffff00 !important;
+    font-weight: 700;
+}
+
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+    background-color: #111111 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
